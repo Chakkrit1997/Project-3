@@ -1,7 +1,0 @@
-{
-  "name": "EasySearch",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
