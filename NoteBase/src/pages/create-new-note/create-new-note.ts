@@ -24,12 +24,12 @@ export class CreateNewNotePage {
     console.log('ionViewDidLoad CreateNewNotePage');
   }
  
-  save(){
-    
-  }
+  save() {
+    this.viewCtrl.dismiss({ isCancel: false, data: this.newNote });
+}
  
-  cancel(){
- 
-  }
+cancel() {
+    this.viewCtrl.dismiss({ isCancel: true });
+}
  
 }
