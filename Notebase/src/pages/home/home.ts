@@ -7,6 +7,8 @@ import { ModalController , NavController } from 'ionic-angular';
 })
 export class HomePage {
  
+  notes = [];
+ 
   constructor(public navCtrl: NavController, private modalCtrl: ModalController) {
   }
  
@@ -15,7 +17,9 @@ export class HomePage {
     modal.present();
  
     modal.onDidDismiss(data => {
-      
+      if(!data.isCancel) {
+        this.notes.push(data.data);
+      } 
     });
   }
  
