@@ -4,5 +4,5 @@
 ### -Nutdanai Jirakangwan
 ### -Sukonthip
 
-## Project Description :tw-1f43b:
+## Project Description
 ทำเว็ปค้นหาหนังสือ
