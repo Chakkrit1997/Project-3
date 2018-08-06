@@ -1,16 +1,18 @@
 # 🔰 Project-3 🔰
 ## Team Members
-* [Chakkrit Tha-aphai](https://www.facebook.com/zDarksoFTz "Chakkrit Tha-aphai's Facebook")
-* [Nutdanai Jirakangwan](https://www.facebook.com/profile.php?id=100000670140714 "Nutdanai Jirakangwan's Facebook")
-* [Sukonthip Kotkhum](https://www.facebook.com/sukhonthip.kotkhum.5 "Sukonthip Kotkhum's Facebook")
+* Chakkrit Tha-aphai [![alt text][logo]][1]
+* Nutdanai Jirakangwan [![alt text][logo]][2]
+* Sukonthip Kotkhum [![alt text][logo]][3]
 
 
 ## Project Description 🤦‍♂️ 
 เว็ปค้นหาหนังสือ
-[![alt text][logo]][1] 
+ 
 
 [logo]: https://www.picz.in.th/images/2018/08/07/BRiUlN.png (https://www.facebook.com/zDarksoFTz "Chakkrit Tha-aphai's Facebook")
 [1]: https://www.facebook.com/zDarksoFTz
+[2]: https://www.facebook.com/profile.php?id=100000670140714
+[3]: https://www.facebook.com/sukhonthip.kotkhum.5
 
 
 
