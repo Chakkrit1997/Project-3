@@ -1,6 +1,6 @@
 # Project-3
 ## Team Members
-### *Chakkrit Tha-aphai
+* Chakkrit Tha-aphai
 ### -Nutdanai Jirakangwan
 ### -Sukonthip
 
