@@ -7,10 +7,12 @@
 
 ## Project Description ![alt text][logo] 
 
-
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/PUr61J7USgQ/0.jpg)](http://www.youtube.com/watch?v=PUr61J7USgQ)
 
 
 [logo]: https://i.ytimg.com/vi/nAAnJCI76ak/maxresdefault.jpg "Logo Title Text 1"
+
+
 
 
 
