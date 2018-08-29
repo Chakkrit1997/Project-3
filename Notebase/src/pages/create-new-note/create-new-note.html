@@ -5,14 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+ 
   <ion-navbar>
     <ion-title>New Note</ion-title>
   </ion-navbar>
-
+ 
 </ion-header>
-
-
+ 
+ 
 <ion-content padding>
   <ion-list>
     <ion-item>
@@ -24,8 +24,8 @@
       <ion-textarea [(ngModel)]="newNote.message"></ion-textarea>
     </ion-item>
   </ion-list>
-
+ 
   <button ion-button block (click)="save()">Save</button>
   <button ion-button block (click)="cancel()" color="danger">Cancel</button>
-
+ 
 </ion-content>

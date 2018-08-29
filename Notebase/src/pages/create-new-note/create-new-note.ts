@@ -17,19 +17,20 @@ export class CreateNewNotePage {
  
   newNote = { title: '', message: '' }
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl : ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+ 
   }
  
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateNewNotePage');
   }
  
-  save(){
+  save() {
     this.viewCtrl.dismiss({ isCancel: false, data: this.newNote });
-  }
+}
  
-  cancel(){
+cancel() {
     this.viewCtrl.dismiss({ isCancel: true });
-  }
+}
  
 }
