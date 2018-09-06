@@ -1,17 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title style="text-align: center">Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-slides autoplay="5000" loop="true" speed="3000">
+    <ion-slide *ngFor="let image of images">
+      <img src="{{image.image}}" height="593" width="890"></ion-slide>
+  </ion-slides>
+  <button ion-button full>Button</button>
 </ion-content>
