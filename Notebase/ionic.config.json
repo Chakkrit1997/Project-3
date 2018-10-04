@@ -1,7 +1,0 @@
-{
-  "name": "Notebase",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
