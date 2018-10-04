@@ -23,6 +23,10 @@
           <p class="h1 text-center text-justify">Welcome to Easysearch Web App!</p>
         <img  src="images/easysearching.jpg" class="rounded img-fluid" alt="Responsive image" width="1170" height="250">
       </div>
+
+
+      
+
       <!--  Start Login Form-->
       <form class="mt-5 myForm" method="post" action="login.php">
         <div class="text-center">
