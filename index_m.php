@@ -19,7 +19,7 @@
 <body>
 <div class="container" >
  <?php $id = 'IT001'; ?>
-    <a class="btn btn-warning warn_lnd" name="view" value="view" id="<?php echo $id ; ?>">แจ้งเตือน</a>
+   <!-- <a class="btn btn-warning warn_lnd" name="view" value="view" id="<?php echo $id ; ?>">แจ้งเตือน</a> -->
     <h2>หน้าหลัก</h2>
 
     <!-- Card Show NewBooks -->
@@ -123,6 +123,7 @@
         }
     ?>
     </div>
+    <input type="hidden" class="warn_lnd" id="<?php echo $id; ?>" value="1">
 </div>
 <?php require 'warn_modal.php'; ?>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -132,9 +133,8 @@
 
 <script>
 $(document).ready(function(){
-    $('.warn_lnd').click(function(){
-      var id = $(this).attr("id");
-      //alert(uid);
+    if($('.warn_lnd').val() > 0){
+        var id = '<?php echo ($id); ?>';
       $.ajax({
             url:"warn_select.php",
             method:"post",
@@ -144,7 +144,7 @@ $(document).ready(function(){
                 $('#dataModal').modal('show');
         }
       });
-    });
+    }
 });    
 </script>
 </body>
