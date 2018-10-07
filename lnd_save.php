@@ -1,6 +1,7 @@
 <?php
-
-require 'mysql/config.php';
+//include 'session_user.php';
+require 'mysql/connect.php';
+//require 'mysql/config.php';
 if(isset($_POST['mid'])){
     $mid = $_POST['mid'];
 }else{
@@ -18,19 +19,21 @@ $msg = "";
 $v1 = 0;
 
 $sql = "SELECT COUNT(bid) FROM books WHERE bid='$bid'";
-require 'mysql/connect.php';
+$result= mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $bookrow = $record[0];
 require 'mysql/uncon.php';
 
-$sql = "SELECT COUNT(bid) FROM transections WHERE bid='$bid' AND mid='$mid' AND tstat='1' ";
 require 'mysql/connect.php';
+$sql = "SELECT COUNT(bid) FROM transections WHERE bid='$bid' AND mid='$mid' AND tstat='1' ";
+$result= mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $lending = $record[0];
 require 'mysql/uncon.php';
 
-$sql = "SELECT COUNT(mid) FROM transections WHERE mid='$mid' AND tstat='1' ";
 require 'mysql/connect.php';
+$sql = "SELECT COUNT(mid) FROM transections WHERE mid='$mid' AND tstat='1' ";
+$result= mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $holding = $record[0];
 require 'mysql/uncon.php';
@@ -45,8 +48,9 @@ if( $bookrow < 1 ){
     $msg = "สมาชิกรายนี้ยืมหนังสืออยู่ 3 เล่มแล้ว";
     $v1 = 0;
 }else{
-    $sql ="INSERT INTO transections (mid,bid,tlend,tstat) VALUE ('$mid','$bid',NOW(),'1')";
     require 'mysql/connect.php';
+    $sql ="INSERT INTO transections (mid,bid,tlend,tstat) VALUE ('$mid','$bid',NOW(),'1')";
+    $result= mysqli_query($dbcon,$sql);
     if($result){
         $msg = "การยืมหนังสือเสร็จสิ้น";
         $v1 = 1;

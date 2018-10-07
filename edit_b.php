@@ -1,13 +1,13 @@
 <?php
-
+    include 'session_user.php';
+    require 'mysql/connect.php';
     $bid = $_POST['bid'];
     $bide = $_POST['bide'];
     $btitle = $_POST['btitle'];
     $bauth = $_POST['bauth'];
     $bt_id = $_POST['bt_id'];
     $sql = "UPDATE books SET bid='$bide',btitle='$btitle',bauth ='$bauth', bt_id='$bt_id' WHERE bid='$bid' ";
-
-    require 'mysql/connect.php';
+    $result = mysqli_query($dbcon,$sql);
     
     $v1= 0 ;
     if($result){

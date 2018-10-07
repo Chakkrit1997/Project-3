@@ -1,10 +1,12 @@
 <?php
+include 'session_user.php';
+require ('mysql/connect.php');
 $bid =$_POST['bid'];
 $btitle =$_POST['btitle'];
 $bauth =$_POST['bauth'];
 $bt_id =$_POST['bt_id'];
 $sql="INSERT INTO books (bid,btitle,bauth,bt_id,bdateadd) VALUE ('$bid','$btitle','$bauth','$bt_id',NOW())";
-require ('mysql/connect.php');
+$result = mysqli_query($dbcon,$sql);
 $v1= 0 ;
 if($result){
     $msg = "การเพิ่มหนังสือสำเร็จ";

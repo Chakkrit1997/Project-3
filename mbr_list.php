@@ -1,6 +1,9 @@
 <?php
+    include 'session_user.php';
+    require 'mysql/connect.php';
    // require 'mysql/config.php';
     $sql = "SELECT mid, mname, mdep FROM members ";
+    
     if(isset($_GET['kw'])){
         $kw=$_GET['kw'];
         $sql.=" WHERE mid='$kw' OR mname LIKE '%$kw%'";
@@ -8,7 +11,6 @@
         $kw="";
         $sql.=" WHERE mid IS NULL";
     }
-    require 'mysql/connect.php';
 
 ?>
 <!DOCTYPE html>
@@ -46,6 +48,7 @@
 <td>DEPARTMENT</td>
 </tr>
 <?php
+    $result = mysqli_query($dbcon,$sql);
     while($record = mysqli_fetch_array($result)){
 ?>
 <tr>
@@ -55,6 +58,7 @@
 </tr>
 <?php
     }
+    require 'mysql/uncon.php';
 ?>
 
 </table><br/>

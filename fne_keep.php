@@ -1,6 +1,5 @@
 <?php
-
-require 'mysql/config.php';
+require 'mysql/connect.php';
 if(isset($_GET['mid'])){
     $mid = $_GET['mid'];
 }else{
@@ -20,7 +19,7 @@ if(isset($_GET['tlend'])){
 }
 
 $sql = "UPDATE transections SET tstat='0' WHERE bid='$bid' AND mid='$mid' AND tlend='$tlend' " ;
-require 'mysql/connect.php';
+$result = mysqli_query($dbcon,$sql);
 if($result){
     $msg = "การชำระค่าปรับเสร็จสิ้น";
     $v1 = 1;

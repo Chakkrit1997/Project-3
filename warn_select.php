@@ -1,9 +1,11 @@
 <?php
+    include 'session_user.php';
+    require 'mysql/connect.php';
     $output='';
     $id=$_POST['id'];
     //echo $id;
-     $sql = "SELECT * FROM transections WHERE mid ='$id' AND tstat='1'";
-    require 'mysql/connect.php';
+    $sql = "SELECT * FROM transections WHERE mid ='$id' AND tstat='1'";
+    $result = mysqli_query($dbcon,$sql);
     $output.='<div class="table table-responsive"><table class="table table-bordered">';
     while($warn = mysqli_fetch_array($result)){
         $output.='
@@ -32,5 +34,5 @@
     $output.='</table></div>';
     echo $output;
     }*/
-    
+    require 'mysql/uncon.php';
 ?>

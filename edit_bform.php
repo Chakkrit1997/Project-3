@@ -1,8 +1,9 @@
 <?php
-
+include 'session_user.php';
+require 'mysql/connect.php';
 $bid = $_GET['bid'];
 $sql = "SELECT * FROM books WHERE bid = '$bid'";
-require 'mysql/connect.php';
+$result = mysqli_query($dbcon,$sql);
 $rowb = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 
@@ -35,7 +36,7 @@ $rowb = mysqli_fetch_array($result, MYSQLI_ASSOC);
         <label for="bauth">ชื่อผู้เขียนหนังสือ : </label><input class="form-control" name="bauth" type="text" id="bauth" value="<?php echo $rowb['bauth']; ?>">
         <?php
             $sql = "SELECT * FROM booktype";
-            require 'mysql/connect.php';
+            $result = mysqli_query($dbcon,$sql);
         ?>
         <label for="bt_id">หมวดหนังสือ</label>
          <select class="form-control" name="bt_id" id="bt_id">

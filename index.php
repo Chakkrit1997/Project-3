@@ -1,3 +1,6 @@
+<?php
+ include 'session_user.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

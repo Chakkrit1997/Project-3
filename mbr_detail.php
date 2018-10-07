@@ -1,5 +1,6 @@
 <?php
-    require 'mysql/config.php';
+    //include 'session_user.php';
+    //require 'mysql/config.php';
     $mid = $_GET['mid'];
     require 'mbr_select.php';
 

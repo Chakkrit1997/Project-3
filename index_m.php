@@ -1,3 +1,7 @@
+<?php
+include 'session_user.php';
+require 'mysql/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +69,7 @@
     <?php
         $count = 1 ;
         $sql = "SELECT * FROM books";
-        require 'mysql/connect.php';
+        $result = mysqli_query($dbcon,$sql);
 
         while( $row = mysqli_fetch_array($result)){
             if( $count <= 5){
@@ -102,7 +106,7 @@
     <?php
         $count = 1 ;
         $sql = "SELECT * FROM books";
-        require 'mysql/connect.php';
+        $result = mysqli_query($dbcon,$sql);
 
         while( $row = mysqli_fetch_array($result)){
             if( $count <= 5){

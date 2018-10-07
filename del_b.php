@@ -1,10 +1,9 @@
 <?php
-
+    include 'session_user.php';
+    require 'mysql/connect.php';
     $bid = $_GET['bid'];
     $sql = "DELETE FROM books WHERE bid='$bid'";
-
-    require 'mysql/connect.php';
-
+    $result = mysqli_query($dbcon,$sql);
     if($result){
         $msg = "การลบหนังสือเสร็จสิ้น";
         $v1 = 1;

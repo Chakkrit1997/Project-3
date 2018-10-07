@@ -1,6 +1,8 @@
 <?php
-$sql="SELECT * FROM books INNER JOIN booktype ON books.bt_id = booktype.bt_id ";
-require 'mysql/connect.php';
+    include 'session_user.php';
+    require 'mysql/connect.php';
+    $sql="SELECT * FROM books INNER JOIN booktype ON books.bt_id = booktype.bt_id ";
+    $result = mysqli_query($dbcon,$sql);
 
 ?>
 <!DOCTYPE html>

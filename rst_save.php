@@ -1,4 +1,6 @@
 <?php
+include 'session_user.php';
+require 'mysql/connect.php';
 
 //require 'mysql/config.php';
 if(isset($_GET['mid'])){
@@ -15,7 +17,7 @@ if(isset($_GET['bid'])){
 }
 
 $sql = "SELECT DATEDIFF(NOW(),tlend) FROM transections WHERE bid='$bid'AND mid='$mid' AND tstat='1'";
-require 'mysql/connect.php';
+$result = mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $numday = (int)$record[0];
 require 'mysql/uncon.php';
@@ -26,8 +28,9 @@ if($numday > 7){
     $tstat = 0;
 }
 
-$sql ="UPDATE transections SET trest=NOW(),tstat='$tstat' WHERE bid='$bid' AND mid='$mid' AND tstat='1' ";
 require 'mysql/connect.php';
+$sql ="UPDATE transections SET trest=NOW(),tstat='$tstat' WHERE bid='$bid' AND mid='$mid' AND tstat='1' ";
+$result = mysqli_query($dbcon,$sql);
 if($result){
     $msg = "การส่งคืนเสร็จสิ้น";
     $v1 = 1;

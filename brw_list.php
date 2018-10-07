@@ -1,3 +1,6 @@
+<?php
+    require 'mysql/connect.php';
+?>
 Book Holding.<br/>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +21,7 @@ Book Holding.<br/>
     </tr>
     <?php
     $sql = "SELECT books.bid, books.btitle ,transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$mid' AND transections.tstat='1'";
-    require 'mysql/connect.php';
+    $result = mysqli_query($dbcon,$sql);
     while($record = mysqli_fetch_array($result)){
     ?>
     <tr>

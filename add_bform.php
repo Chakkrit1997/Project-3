@@ -1,6 +1,6 @@
 <?php
-
-
+include 'session_user.php';
+require 'mysql/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
         <label for="bt_id">หมวดหนังสือ</label></label>
         <?php
                 $sql = "SELECT * FROM booktype";
-                require 'mysql/connect.php';
+                $result = mysqli_query($dbcon,$sql);
         ?>
         <select class="form-control" name="bt_id" id="bt_id">
             <option value="">---เลือกหมวดหนังสือ---</option>

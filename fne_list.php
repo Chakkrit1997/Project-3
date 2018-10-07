@@ -1,3 +1,7 @@
+<?php
+require 'mysql/connect.php';
+?>
+
 Fine.<br/>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +25,7 @@ Fine.<br/>
 </tr>
 <?php
  $sql = "SELECT books.bid, books.btitle, transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY) AS deadline, transections.trest, DATEDIFF(transections.trest,transections.tlend) - 7 AS late FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$mid' AND transections.tstat='2' ";
- require 'mysql/connect.php';
+ $result = mysqli_query($dbcon,$sql);
  while($record = mysqli_fetch_array($result)){
 ?>
    <tr>
