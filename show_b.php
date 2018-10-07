@@ -25,6 +25,7 @@
 </head>
 <body>
 <div class="container">
+<br/>
     <div class="row">
         <div class="col-12">
     <table class="table">
@@ -63,6 +64,7 @@
 <a class="btn btn-danger" href="index.php">กลับหน้าหลัก</a>
 </div>
     </div>
+    <br/>
 </div>
 </body>
 </html>
