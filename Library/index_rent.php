@@ -24,7 +24,7 @@
 
   </head>
   <body>
-  <table class="table table-bordered">
+  <table class="table table-bordered mt-3">
         <tr>
         <td>Book ID</td>
         <td>Title</td>
