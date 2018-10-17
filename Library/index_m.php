@@ -77,8 +77,7 @@ require 'mysql/connect.php';
     <div class="card w-100">
         <div class="card-body">
         <p class="p-2 bg-secondary text-white" style="float:right;">VIEW</p>
-            <img class="card-img-left " style="float:right;" src="\Books\Library\src\img\1.jpg" width="150px" heigth="auto" alt="Card image cap">
-            
+            <img class="card-img-left " style="float:right;" src="src\img\1.jpg" width="150px" heigth="auto" alt="Card image cap">
             <h4 class="card-title">#<?php echo $count ;?> <?php echo $row['btitle'] ;?></h4>
             <div style="float:left;">
             <p class="card-text">BOOK ID : <?php echo $row['bid']; ?> </p>
