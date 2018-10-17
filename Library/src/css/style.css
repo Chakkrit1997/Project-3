@@ -3,6 +3,10 @@
 body {
     font-family: 'Kanit', sans-serif;
 }
+
+.big-banner {
+    background-image: url('../img/wallpaper.jpg');
+}
 .forms-body{
     background-color: #f5f5f5
 
