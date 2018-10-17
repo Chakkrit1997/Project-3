@@ -11,7 +11,7 @@
         $output.='
         <tr>
             <td width="30%" ><label>Name</label></td></tr>
-            <td width="70%" ><label>'.$warn["mid"].'</label></td></tr>
+            <td width="70%" ><label>'.$warn["tlend"].'</label></td></tr>
             
             ';
     }

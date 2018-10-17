@@ -2,14 +2,14 @@
     include 'session_user.php';
     require 'mysql/connect.php';
    // require 'mysql/config.php';
-    $sql = "SELECT mid, mname, mdep FROM members ";
+    $sql = "SELECT * FROM tb_login ";
     
     if(isset($_GET['kw'])){
         $kw=$_GET['kw'];
-        $sql.=" WHERE mid='$kw' OR mname LIKE '%$kw%'";
+        $sql.=" WHERE login_id ='$kw' OR firstname LIKE '%$kw%'";
     }else{
         $kw="";
-        $sql.=" WHERE mid IS NULL";
+        $sql.=" WHERE login_id IS NULL";
     }
 
 ?>
@@ -72,16 +72,16 @@
 <tr>
 <td>ID</td>
 <td>NAME</td>
-<td>DEPARTMENT</td>
+<td>Status</td>
 </tr>
 <?php
     $result = mysqli_query($dbcon,$sql);
     while($record = mysqli_fetch_array($result)){
 ?>
 <tr>
-<td><a href="mbr_detail.php?mid=<?php echo($record[0]); ?>"><?php echo($record[0]); ?></a></td>
-<td><?php echo($record[1]); ?></td>
-<td><?php echo($record[2]); ?></td>
+<td><a href="mbr_detail.php?mid=<?php echo($record['login_id']); ?>"><?php echo($record[0]); ?></a></td>
+<td><?php echo($record['firstname']); ?></td>
+<td><?php echo($record['login_status']); ?></td>
 </tr>
 <?php
     }
