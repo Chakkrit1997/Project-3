@@ -66,7 +66,8 @@ require 'mysql/connect.php';
     <h3># Top Chart #</h3>
     <br/>
     <?php
-        $count = 1 ;
+     require 'sort.php';
+   /*     $count = 1 ;
         $sql = "SELECT * FROM books";
         $result = mysqli_query($dbcon,$sql);
 
@@ -93,7 +94,7 @@ require 'mysql/connect.php';
     <?php
             }
             $count = $count+1;
-        }
+        }*/
     ?>
     </div>
 
