@@ -21,7 +21,7 @@ require 'mysql/connect.php';
 </head>
 <body>
 <div class="container" >
- <?php $id = 'IT001'; ?>
+
    <!-- <a class="btn btn-warning warn_lnd" name="view" value="view" id="<?php echo $id ; ?>">แจ้งเตือน</a> -->
     <h2>หน้าหลัก</h2>
 
@@ -126,7 +126,7 @@ require 'mysql/connect.php';
         }
     ?>
     </div>
-    <input type="hidden" class="warn_lnd" id="<?php echo $id; ?>" value="1">
+    <input type="hidden" class="warn_lnd" value="1">
 </div>
 <?php require 'warn_modal.php'; ?>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -137,7 +137,7 @@ require 'mysql/connect.php';
 <script>
 $(document).ready(function(){
     if($('.warn_lnd').val() > 0){
-        var id = '<?php echo ($id); ?>';
+        var id = '<?php echo ($session_login_id); ?>';
       $.ajax({
             url:"warn_select.php",
             method:"post",
