@@ -4,14 +4,13 @@
     $output='';
     $id=$_POST['id'];
     //echo $id;
-    $sql = "SELECT * FROM transections WHERE mid ='$id' AND tstat='1'";
+    $sql = "SELECT *,DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM transections INNER JOIN books ON transections.bid = books.bid WHERE transections.mid='$id' AND transections.tstat='1'";
     $result = mysqli_query($dbcon,$sql);
-    $output.='<div class="table table-responsive"><table class="table table-bordered">';
+    $output.='<p>ยินดีต้อนรับคุณสู่ห้องสมุดRMUTL</p><div class="table table-responsive"><table class="table table-bordered"> <tr>
+    <td width="30%" ><label>รายการหนังสือที่ยืม</label></td><td width="30%" ><label>วันที่ครบกำหนด</label></td></tr>';
     while($warn = mysqli_fetch_array($result)){
         $output.='
-        <tr>
-            <td width="30%" ><label>Name</label></td></tr>
-            <td width="70%" ><label>'.$warn["tlend"].'</label></td></tr>
+            <td width="70%" ><label>'.$warn["btitle"].'</label></td><td width="70%" ><label>'.$warn["deadline"].'</label></td></tr>
             
             ';
     }
