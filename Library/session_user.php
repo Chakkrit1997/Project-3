@@ -18,7 +18,6 @@
         $s_login_email = $row_user['login_email'];
         $s_login_status = $row_user['login_status'];
         $s_login_password = $row_user['login_password'];
-
         mysqli_free_result($result_user);
     }
     mysqli_close($dbcon);

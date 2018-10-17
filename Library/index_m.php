@@ -26,7 +26,7 @@ require 'mysql/connect.php';
     <h2>หน้าหลัก</h2>
 
     <!-- Card Show NewBooks -->
-   <div class="card-deck">
+   <!--<div class="card-deck">
   <div class="card">
     <img class="card-img-top" src="src\img\1.jpg" alt="Card image cap">
     <div class="card-body">
@@ -57,8 +57,8 @@ require 'mysql/connect.php';
       <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
-</div>
-<br/>
+</div>-->
+<br>
 
     <!-- Card Show TopChart -->
 
@@ -71,17 +71,18 @@ require 'mysql/connect.php';
         $result = mysqli_query($dbcon,$sql);
 
         while( $row = mysqli_fetch_array($result)){
+            $photo = "src/img/".$row['bid'].".jpg";
             if( $count <= 5){
     ?>
     
     <div class="card w-100">
         <div class="card-body">
-        <p class="p-2 bg-secondary text-white" style="float:right;">VIEW</p>
-            <img class="card-img-left " style="float:right;" src="src\img\1.jpg" width="150px" heigth="auto" alt="Card image cap">
+            <img class="card-img-left " style="float:right;" src="<?php echo($photo);?>" width="150px" heigth="auto" alt="Card image cap">
             <h4 class="card-title">#<?php echo $count ;?> <?php echo $row['btitle'] ;?></h4>
             <div style="float:left;">
-            <p class="card-text">BOOK ID : <?php echo $row['bid']; ?> </p>
-            <p class="card-text">AUTHOR NAME : <?php echo $row['bauth']; ?></p>
+            <p class="card-text">รหัสหนังสือ : <?php echo $row['bid']; ?> </p>
+            <p class="card-text">ชื่อหนังสือ : <?php echo $row['btitle']; ?> </p>
+            <p class="card-text">ชื่อผู้แต่ง : <?php echo $row['bauth']; ?></p>
             <br/>
             <a href="#" class="btn btn-primary">VIEW</a>
            
@@ -96,35 +97,6 @@ require 'mysql/connect.php';
     ?>
     </div>
 
-      <!-- Card Show TopChart -->
-
-    <div class="topchart">
-    <h3># Top Chart #</h3>
-    <br/>
-    <?php
-        $count = 1 ;
-        $sql = "SELECT * FROM books";
-        $result = mysqli_query($dbcon,$sql);
-
-        while( $row = mysqli_fetch_array($result)){
-            if( $count <= 5){
-    ?>
-    
-    <div class="card w-75">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $row['btitle'] ;?></h5>
-            <p class="card-text">BOOK ID : <?php echo $row['bid']; ?> </p>
-            <p class="card-text">AUTHOR NAME : <?php echo $row['bauth']; ?></p>
-            <a href="#" class="btn btn-primary">Button</a>
-        </div>
-    </div>
-    <br/>
-    <?php
-            }
-            $count = $count+1;
-        }
-    ?>
-    </div>
     <input type="hidden" class="warn_lnd" value="1">
 </div>
 <?php require 'warn_modal.php'; ?>
