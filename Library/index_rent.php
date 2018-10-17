@@ -26,10 +26,10 @@
   <body>
   <table class="table table-bordered mt-3">
         <tr>
-        <td>Book ID</td>
-        <td>Title</td>
-        <td>Lend Date</td>
-        <td>Dead Line</td>
+        <td>รหัสหนังสือ</td>
+        <td>ชื่อหนังสือ</td>
+        <td>วันที่ยืม</td>
+        <td>กำหนดคืนหนังสือ</td>
         </tr>
         <?php
         //$mid = '$session_login_id';
