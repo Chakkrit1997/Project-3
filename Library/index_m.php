@@ -23,7 +23,6 @@ require 'mysql/connect.php';
 <div class="container" >
 
    <!-- <a class="btn btn-warning warn_lnd" name="view" value="view" id="<?php echo $id ; ?>">แจ้งเตือน</a> -->
-    <h2>หน้าหลัก</h2>
 
     <!-- Card Show NewBooks -->
    <!--<div class="card-deck">
@@ -84,7 +83,7 @@ require 'mysql/connect.php';
             <p class="card-text">ชื่อหนังสือ : <?php echo $row['btitle']; ?> </p>
             <p class="card-text">ชื่อผู้แต่ง : <?php echo $row['bauth']; ?></p>
             <br/>
-            <a href="#" class="btn btn-primary">VIEW</a>
+            <!-- <a href="#" class="btn btn-primary">VIEW</a>-->
            
             </div>
         </div>
