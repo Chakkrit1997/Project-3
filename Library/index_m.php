@@ -29,7 +29,7 @@ require 'mysql/connect.php';
     <!-- Card Show NewBooks -->
    <div class="card-deck">
   <div class="card">
-    <img class="card-img-top" src="\Books\Library\src\img\1.jpg" alt="Card image cap">
+    <img class="card-img-top" src="src\img\1.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -39,7 +39,7 @@ require 'mysql/connect.php';
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="\Books\Library\src\img\2.png" wight="" height="" alt="Card image cap">
+    <img class="card-img-top" src="src\img\2.png" wight="" height="" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -49,7 +49,7 @@ require 'mysql/connect.php';
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="\Books\Library\src\img\3.jpg" alt="Card image cap">
+    <img class="card-img-top" src="src\img\3.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

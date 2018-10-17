@@ -72,7 +72,7 @@
 <tr>
 <td>ID</td>
 <td>NAME</td>
-<td>Status</td>
+<td>STATUS</td>
 </tr>
 <?php
     $result = mysqli_query($dbcon,$sql);
@@ -80,7 +80,7 @@
 ?>
 <tr>
 <td><a href="mbr_detail.php?mid=<?php echo($record['login_id']); ?>"><?php echo($record[0]); ?></a></td>
-<td><?php echo($record['firstname']); ?></td>
+<td><?php echo($record['firstname']);echo($record['lastname']); ?></td>
 <td><?php echo($record['login_status']); ?></td>
 </tr>
 <?php
