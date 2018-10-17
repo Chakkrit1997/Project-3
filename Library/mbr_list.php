@@ -80,7 +80,7 @@
 ?>
 <tr>
 <td><a href="mbr_detail.php?login_id=<?php echo($record['login_id']); ?>"><?php echo($record[0]); ?></a></td>
-<td><?php echo($record['firstname']);echo($record['lastname']); ?></td>
+<td><?php echo($record['firstname'] . " ". $record['lastname']); ?></td>
 <td><?php echo($record['login_status']); ?></td>
 </tr>
 <?php
