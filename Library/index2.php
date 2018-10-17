@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="src/css/style.css">
+
     <script src="src/js/jquery-3.3.1.min.js"></script>
     <script>
       $(document).ready(function(){
@@ -67,9 +68,6 @@
           <li class="nav-item ">
             <a class="nav-link " href="#" data-target="index_profile">ข้อมูลส่วนตัว</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -78,12 +76,11 @@
         </form>
       </div>
     </nav>
+      <div class="container" id="content">
+        <?php include('home.php'); ?>
+      </div>
 
-    <div class="container" id="content">
-      <?php include('home.php'); ?>
-    </div>
     
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
