@@ -1,7 +1,7 @@
 <?php
     //include 'session_user.php';
     //require 'mysql/config.php';
-    $mid = $_GET['mid'];
+    $login_id = $_GET['login_id'];
     require 'mbr_select.php';
 
     ?>
@@ -53,15 +53,15 @@
     </tr>
     <tr>
     <td align="right">ID :</td>
-    <td align="left"><?php echo($mid); ?></td>
+    <td align="left"><?php echo($login_id); ?></td>
     </tr>
     <tr>
     <td align="right">Name :</td>
-    <td align="left"><?php echo($mname); ?></td>
+    <td align="left"><?php echo($firstname); ?></td>
     </tr>
     <tr>
     <td align="right">Department :</td>
-    <td align="left"><?php echo($mdep); ?></td>
+    <td align="left"><?php echo($login_status); ?></td>
     </tr>
     <tr>
     <td colspan="2" align="center"><a class="btn btn-danger" href="mbr_list.php">Back</a></td>

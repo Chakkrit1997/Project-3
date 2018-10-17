@@ -79,7 +79,7 @@
     while($record = mysqli_fetch_array($result)){
 ?>
 <tr>
-<td><a href="mbr_detail.php?mid=<?php echo($record['login_id']); ?>"><?php echo($record[0]); ?></a></td>
+<td><a href="mbr_detail.php?login_id=<?php echo($record['login_id']); ?>"><?php echo($record[0]); ?></a></td>
 <td><?php echo($record['firstname']);echo($record['lastname']); ?></td>
 <td><?php echo($record['login_status']); ?></td>
 </tr>

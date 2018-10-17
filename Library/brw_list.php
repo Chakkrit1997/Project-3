@@ -21,7 +21,7 @@ Book Holding.<br/>
     <td>Restore</td>
     </tr>
     <?php
-    $sql = "SELECT books.bid, books.btitle ,transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$mid' AND transections.tstat='1'";
+    $sql = "SELECT books.bid, books.btitle ,transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$login_id' AND transections.tstat='1'";
     $result = mysqli_query($dbcon,$sql);
     while($record = mysqli_fetch_array($result)){
     ?>
@@ -41,7 +41,7 @@ Book Holding.<br/>
 <script language="javascript">
 
 function rstbook(v1){
-    var url = "rst_save.php?mid=<?php echo($mid);?>&bid=" +v1;
+    var url = "rst_save.php?login_id=<?php echo($login_id);?>&bid=" +v1;
     if(confirm("Restore tihs book ?") == true){
         window.location.href =url;
     }

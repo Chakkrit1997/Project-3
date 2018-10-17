@@ -2,10 +2,10 @@
 //include 'session_user.php';
 require 'mysql/connect.php';
 //require 'mysql/config.php';
-if(isset($_POST['mid'])){
-    $mid = $_POST['mid'];
+if(isset($_POST['login_id'])){
+    $login_id = $_POST['login_id'];
 }else{
-    $mid = "";
+    $login_id = "";
 }
 
 if(isset($_POST['bid'])){
@@ -25,14 +25,14 @@ $bookrow = $record[0];
 require 'mysql/uncon.php';
 
 require 'mysql/connect.php';
-$sql = "SELECT COUNT(bid) FROM transections WHERE bid='$bid' AND mid='$mid' AND tstat='1' ";
+$sql = "SELECT COUNT(bid) FROM transections WHERE bid='$bid' AND mid='$login_id' AND tstat='1' ";
 $result= mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $lending = $record[0];
 require 'mysql/uncon.php';
 
 require 'mysql/connect.php';
-$sql = "SELECT COUNT(mid) FROM transections WHERE mid='$mid' AND tstat='1' ";
+$sql = "SELECT COUNT(mid) FROM transections WHERE mid='$login_id' AND tstat='1' ";
 $result= mysqli_query($dbcon,$sql);
 $record = mysqli_fetch_array($result);
 $holding = $record[0];
@@ -49,7 +49,7 @@ if( $bookrow < 1 ){
     $v1 = 0;
 }else{
     require 'mysql/connect.php';
-    $sql ="INSERT INTO transections (mid,bid,tlend,tstat) VALUE ('$mid','$bid',NOW(),'1')";
+    $sql ="INSERT INTO transections (mid,bid,tlend,tstat) VALUE ('$login_id','$bid',NOW(),'1')";
     $result= mysqli_query($dbcon,$sql);
     if($result){
         $msg = "การยืมหนังสือเสร็จสิ้น";
@@ -74,7 +74,7 @@ if( $bookrow < 1 ){
     var v1=<?php echo($v1); ?>;
     alert('<?php echo($msg); ?>');
     if( v1 == 1 ){
-        window.location.replace("mbr_detail.php?mid=<?php echo($mid);?>");
+        window.location.replace("mbr_detail.php?login_id=<?php echo($login_id);?>");
     }else{
         window.history.back();
 

@@ -1,9 +1,9 @@
 <?php
 require 'mysql/connect.php';
-if(isset($_GET['mid'])){
-    $mid = $_GET['mid'];
+if(isset($_GET['login_id'])){
+    $login_id = $_GET['login_id'];
 }else{
-    $mid = "";
+    $login_id = "";
 }
 
 if(isset($_GET['bid'])){
@@ -18,7 +18,7 @@ if(isset($_GET['tlend'])){
     $tlend = "";
 }
 
-$sql = "UPDATE transections SET tstat='0' WHERE bid='$bid' AND mid='$mid' AND tlend='$tlend' " ;
+$sql = "UPDATE transections SET tstat='0' WHERE bid='$bid' AND mid='$login_id' AND tlend='$tlend' " ;
 $result = mysqli_query($dbcon,$sql);
 if($result){
     $msg = "การชำระค่าปรับเสร็จสิ้น";
@@ -42,7 +42,7 @@ require 'mysql/uncon.php';
     var v1=<?php echo($v1); ?>;
     alert('<?php echo($msg); ?>');
     if( v1 == 1 ){
-        window.location.replace("mbr_detail.php?mid=<?php echo($mid);?>");
+        window.location.replace("mbr_detail.php?login_id=<?php echo($login_id);?>");
     }else{
         window.history.back();
     }

@@ -24,7 +24,7 @@ Fine.<br/>
     <td>Keep</td>
 </tr>
 <?php
- $sql = "SELECT books.bid, books.btitle, transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY) AS deadline, transections.trest, DATEDIFF(transections.trest,transections.tlend) - 7 AS late FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$mid' AND transections.tstat='2' ";
+ $sql = "SELECT books.bid, books.btitle, transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY) AS deadline, transections.trest, DATEDIFF(transections.trest,transections.tlend) - 7 AS late FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$login_id' AND transections.tstat='2' ";
  $result = mysqli_query($dbcon,$sql);
  while($record = mysqli_fetch_array($result)){
 ?>
@@ -46,7 +46,7 @@ Fine.<br/>
 <script language="javascript">
 
 function fnekeep(v1,v2){
-    var url = "fne_keep.php?mid=<?php echo($mid);?>&bid=" +v1 + "&tlend=" +v2;
+    var url = "fne_keep.php?login_id=<?php echo($login_id);?>&bid=" +v1 + "&tlend=" +v2;
     if(confirm("Keep this transections fine ?") == true){
         window.location.href =url;
     }
