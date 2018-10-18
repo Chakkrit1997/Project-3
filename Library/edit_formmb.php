@@ -39,20 +39,8 @@ $rowb = mysqli_fetch_array($result);
             $sql = "SELECT login_status FROM tb_login";
             $result = mysqli_query($dbcon,$sql);
         ?>
-         <label for="login_status">หมวดหนังสือ</label>
-         <select class="form-control" name="login_status" id="login_status">
-            <option value="">---เลือกหมวดหนังสือ---</option>
-            <?php
-                    while($row = mysqli_fetch_array($result)){
-                        if($row[0] == $rowb[5]){
-                            echo"<option value='$row[0]'selected>$row[1]</option>";
-                        }else{
-                            echo"<option value='$row[0]'>$row[1]</option>";
-                        }
-                    }
-            ?>
-        </select>
-        <br><br>
+
+        <br>
         <input type="hidden" name="login_id" id="login_id" value="<?php echo $rowb[0];?>">
         <input class="btn btn-success" name="submit" type="submit" id="submit" value="แก้ไขข้อมูล">
         <a class="btn btn-danger" href="manage_user.php" >กลับหน้าหลัก</a>
