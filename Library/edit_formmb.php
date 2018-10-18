@@ -34,10 +34,9 @@ $rowb = mysqli_fetch_array($result);
         <label for="login_ide">รหัสสมาชิก : </label><input class="form-control" name="login_ide" type="text" id="login_ide" value="<?php echo $rowb[0]; ?>">
         <label for="login_login_username">USER : </label><input class="form-control" name="login_username" type="text" id="login_username" value="<?php echo $rowb[1]; ?>">
         <label for="login_email">EMAIL : </label><input class="form-control" name="login_email" type="text" id="login_email" value="<?php echo $rowb[3]; ?>">
-       
-        </select>
-        <br><br>
+
         <input type="hidden" name="login_id" id="login_id" value="<?php echo $rowb[0];?>">
+        <br/>
         <input class="btn btn-success" name="submit" type="submit" id="submit" value="แก้ไขข้อมูล">
         <a class="btn btn-danger" href="index.php" >กลับหน้าหลัก</a>
     </fieldset>
