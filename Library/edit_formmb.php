@@ -33,29 +33,13 @@ $rowb = mysqli_fetch_array($result);
 
         <label for="login_ide">รหัสสมาชิก : </label><input class="form-control" name="login_ide" type="text" id="login_ide" value="<?php echo $rowb[0]; ?>">
         <label for="login_login_username">USER : </label><input class="form-control" name="login_username" type="text" id="login_username" value="<?php echo $rowb[1]; ?>">
-        <label for="login_password">PASSWORD : </label><input class="form-control" name="login_password" type="text" id="login_password" value="<?php echo $rowb[2]; ?>">
         <label for="login_email">EMAIL : </label><input class="form-control" name="login_email" type="text" id="login_email" value="<?php echo $rowb[3]; ?>">
-        <?php
-            $sql = "SELECT login_status FROM tb_login";
-            $result = mysqli_query($dbcon,$sql);
-        ?>
-         <label for="login_status">หมวดหนังสือ</label>
-         <select class="form-control" name="login_status" id="login_status">
-            <option value="">---เลือกหมวดหนังสือ---</option>
-            <?php
-                    while($row = mysqli_fetch_array($result)){
-                        if($row[0] == $rowb[5]){
-                            echo"<option value='$row[0]'selected>$row[1]</option>";
-                        }else{
-                            echo"<option value='$row[0]'>$row[1]</option>";
-                        }
-                    }
-            ?>
+       
         </select>
         <br><br>
         <input type="hidden" name="login_id" id="login_id" value="<?php echo $rowb[0];?>">
         <input class="btn btn-success" name="submit" type="submit" id="submit" value="แก้ไขข้อมูล">
-        <a class="btn btn-danger" href="manage_user.php" >กลับหน้าหลัก</a>
+        <a class="btn btn-danger" href="index.php" >กลับหน้าหลัก</a>
     </fieldset>
     </div>
 </form>

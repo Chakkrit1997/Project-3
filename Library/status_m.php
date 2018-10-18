@@ -1,17 +1,25 @@
 <?php
-include 'session_user.php';
+//include 'session_user.php';
 require 'mysql/connect.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+
+    <!-- Google Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
     <title>สถานะสมาชิก</title>
 </head>
 <body>
@@ -26,8 +34,8 @@ require 'mysql/connect.php';
         <td>Dead Line</td>
         </tr>
         <?php
-        $mid = 'IT001';
-        $sql = "SELECT books.bid, books.btitle ,transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$mid' AND transections.tstat='1'";
+        
+        $sql = "SELECT books.bid, books.btitle ,transections.tlend, DATE_ADD(transections.tlend,INTERVAL 7 DAY)AS deadline FROM books, transections WHERE books.bid=transections.bid AND transections.mid='$session_login_id' AND transections.tstat='1'";
         $result = mysqli_query($dbcon,$sql);
         while($record = mysqli_fetch_array($result)){
         ?>
@@ -42,7 +50,7 @@ require 'mysql/connect.php';
         require 'mysql/uncon.php';
         ?>
     </table>
-    <a class="btn btn-danger" href="index.php">กลับหน้าหลัก</a>
+    <a class="btn btn-danger" href="index2.php">กลับหน้าหลัก</a>
     </div>
 </body>
 

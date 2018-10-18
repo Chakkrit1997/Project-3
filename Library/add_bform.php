@@ -48,7 +48,7 @@ require 'mysql/connect.php';
       
         <input class="btn btn-success" name="submit" type="submit" id="submit" value="เพิ่มข้อมูล">
        
-        <a class="btn btn-danger" href="show_b.php">กลับหน้าหลัก</a> 
+        <a class="btn btn-danger" href="index.php">กลับหน้าหลัก</a> 
     </fieldset>
     </div>
     </form>

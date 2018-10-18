@@ -31,7 +31,7 @@
     var v1=<?php echo($v1); ?>;
     alert('<?php echo($msg); ?>');
     if( v1 == 1 ){
-        window.location.replace("manage_user.php");
+        window.location.replace("index.php");
     }else{
         window.history.back();
     }

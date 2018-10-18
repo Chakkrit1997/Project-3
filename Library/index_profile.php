@@ -30,7 +30,7 @@
   </head>
   <body>
   <div class="container">
-        <h1 class="">ข้อมูลส่วนตัว</h1>
+        <h1 class="mt-3">ข้อมูลส่วนตัว</h1>
             <?php
                 
                 echo "$record[firstname] $record[lastname] ";
@@ -45,7 +45,9 @@
             <button type="button" class="mt-2 btn btn-danger " data-toggle="modal" data-target="#myModal">
               แก้ไขข้อมูลส่วนตัว
             </button>
+            <?php require 'status_m.php' ?>
     </div>
+    
 <!-- Start Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -62,7 +64,7 @@
         <div class="text-center">
             <h2 class="mt-2 font-weight-normal">กรอกข้อมูลที่ต้องการแก้ไข</h2>
         </div>
-
+        
         <div class="form-group"><h6>ชื่อ</h6>
           <input type="text" class="form-control" name="firstname" id="firstname_register" value="<?php echo($s_login_firstname);?>" placeholder="Firstname" required>
           <span id="name_status"></span>

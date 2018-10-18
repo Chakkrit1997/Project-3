@@ -56,15 +56,15 @@
           <li class="nav-item ">
             <a class="nav-link" href="#" data-target="home" >หน้าหลัก </a>
           </li>
-          <li class="nav-item">
+         <!-- <li class="nav-item">
             <a class="nav-link" href="#" data-target="index_listbook">รายชื่อหนังสือ</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="#" data-target="index_searchbook">ค้นหาหนังสือ</a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" href="#" data-target="index_rent">ข้อมูลการยืม</a>
-          </li>
+          </li>-->
           <li class="nav-item ">
             <a class="nav-link " href="#" data-target="index_profile">ข้อมูลส่วนตัว</a>
           </li>
